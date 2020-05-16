@@ -5,6 +5,11 @@ In this repo I put together some practice and information related to Spring Boot
 - How to create RestAPIs.
 - More comming soon...
 
+## General commands
+
+- Create de `application-profile.properties` you need.
+- on the CMD run `mvn spring-boot:run -Dspring.profiles.active=qa` **
+
 
 ## Useful tips to remove listed .gitignore files
 

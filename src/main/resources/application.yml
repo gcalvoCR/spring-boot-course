@@ -1,0 +1,15 @@
+spring:  profiles:    active: qa 
+---spring:  profiles: dev  
+server:
+  port: 9090
+  
+default:
+  course: 
+    name: SAP HANA
+    chapterCount: 5
+    
+course:
+  name: AWS and Docker
+  chapter-count: 45
+  rating: 5
+  author: Gabriel Calvo Vargas  ---spring:  profiles: qa  server:  port: 9191  default:  course:     name: SAP HANA QA    chapterCount: 5    course:  name: AWS and Docker QA  chapter-count: 45  rating: 5  author: Gabriel Calvo Vargas QA
