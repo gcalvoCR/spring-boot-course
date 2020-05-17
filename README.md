@@ -2,8 +2,11 @@
 
 In this repo I put together some practice and information related to Spring Boot.
 
-- How to create RestAPIs.
-- More comming soon...
+1. How to create RestAPIs.
+2. Spring Boot properties.
+3. Embedded tomcat server.
+4. Logbak and Log4j. *
+5. Spring Data JPA
 
 ## General commands
 

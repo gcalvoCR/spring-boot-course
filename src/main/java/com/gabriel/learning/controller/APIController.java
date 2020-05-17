@@ -2,6 +2,8 @@ package com.gabriel.learning.controller;
 
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,8 @@ public class APIController {
 	
 	@Autowired
 	private CourseConfiguration course;
+	
+	Logger logger = LoggerFactory.getLogger(APIController.class);
 	
 	@GetMapping("/defaultcourses")
     public Course getDefaultCourse(){
