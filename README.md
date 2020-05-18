@@ -7,11 +7,12 @@ In this repo I put together some practice and information related to Spring Boot
 3. Embedded tomcat server.
 4. Logbak and Log4j. *
 5. Spring Data JPA
+6. Hibernate to generate Tables (ORM).
 
 ## General commands
 
-- Create de `application-profile.properties` you need.
-- on the CMD run `mvn spring-boot:run -Dspring.profiles.active=qa` **
+- Create the `application-profile.properties` you need.
+- on the CMD run `mvn spring-boot:run -Dspring.profiles.active=qa` *
 
 
 ## Useful tips to remove listed .gitignore files
@@ -22,6 +23,10 @@ git rm -r --cached .
 git add .
 git commit -m "Removing all files in .gitignore"
 ```
+
+## Useful links for examples
+
+- [Spring Boot MariaDB CRUD Example Tutorial](https://www.javaguides.net/2020/01/spring-boot-mariadb-crud-example-tutorial.html)
 
 ___
 

@@ -4,26 +4,30 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("course")
-public class CourseConfiguration {
+@ConfigurationProperties("config")
+public class GeneralConfiguration {
 	
 	private String name;
-	private int chapterCount;
 	private int rating;
 	private String author;
+	
+	//Constructors
+	public GeneralConfiguration(String name, String author) {
+		super();
+		this.name = name;
+		this.author = author;
+	}
+	
+	public GeneralConfiguration() {}
+	
 	
 	//getters and setters
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
-	}
-	public int getChapterCount() {
-		return chapterCount;
-	}
-	public void setChapterCount(int chapterCount) {
-		this.chapterCount = chapterCount;
 	}
 	public int getRating() {
 		return rating;
@@ -36,8 +40,6 @@ public class CourseConfiguration {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-	
-	
+	}	
 
 }

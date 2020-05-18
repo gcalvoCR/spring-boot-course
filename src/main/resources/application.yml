@@ -1,15 +1,14 @@
-spring:  profiles:    active: dev
+spring:  profiles:    active: dev  datasource:    url: jdbc:mariadb://localhost:6666/course_schema    username: root    password: root    driverclassName: org.mariadb.jdbc.Driver  jpa:    hibernate:      ddl-auto: update
 ---spring:  profiles: dev  
 server:
   port: 9090
   
 default:
-  course: 
-    name: SAP HANA
-    chapterCount: 5
+  config: 
+    name: Spring Boot Demo
+    author: Gabriel Calvo Vargas
     
-course:
-  name: AWS and Docker
-  chapter-count: 45
+config:
+  name: Spring Boot Demo DEV
   rating: 5
-  author: Gabriel Calvo Vargas  ---spring:  profiles: qa  server:  port: 9191  default:  course:     name: SAP HANA QA    chapterCount: 5    course:  name: AWS and Docker QA  chapter-count: 45  rating: 5  author: Gabriel Calvo Vargas QA
+  author: Gabriel Calvo Vargas DEV  ---spring:  profiles: qa  server:  port: 9191  default:  config:     name: Spring Boot Demo    author: Gabriel Calvo Vargas    config:  name: Spring Boot Demo QA  rating: 5  author: Gabriel Calvo Vargas QA

@@ -12,47 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gabriel.learning.config.CourseConfiguration;
+import com.gabriel.learning.config.GeneralConfiguration;
 import com.gabriel.learning.model.Course;
 
 @RestController
 public class APIController {
 	
-	@Value("${default.course.name}")
+	@Value("${default.config.name}")
 	private String name;
 	
-	@Value("${default.course.chapterCount}")
-	private int chapterCount;
+	@Value("${default.config.author}")
+	private String author;
 	
 	@Autowired
-	private CourseConfiguration course;
+	private GeneralConfiguration generalConfig;
 	
 	Logger logger = LoggerFactory.getLogger(APIController.class);
 	
-	@GetMapping("/defaultcourses")
-    public Course getDefaultCourse(){
-        return new Course(name, chapterCount);
+	@GetMapping("/defaultCounfig")
+    public GeneralConfiguration getDefaultCourse(){
+        return new GeneralConfiguration(name, author);
     }
 	
-	@GetMapping("/configcourses")
+	@GetMapping("/config")
     public HashMap<String, Object> getConfigCourse(){
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put("name", course.getName());
-		map.put("chapterCount", course.getChapterCount());
-		map.put("rating", course.getRating());
-		map.put("author", course.getAuthor());
+		map.put("name", generalConfig.getName());
+		map.put("rating", generalConfig.getRating());
+		map.put("author", generalConfig.getAuthor());
 		
 		return map;
 		
     }
 	
-	
-	@GetMapping("/courses")
-    public Course getCourse(@RequestParam(value="name", defaultValue = "Spring Boot", required=false) String name,
-    						@RequestParam(value="chapterCount", defaultValue = "2", required=false) int chapterCount){
-        return new Course(name, chapterCount);
-    }
 	
 	@PostMapping("/courses")
 	public String saveCourse(@RequestBody Course course) {
