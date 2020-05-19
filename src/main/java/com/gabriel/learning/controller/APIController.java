@@ -1,19 +1,25 @@
 package com.gabriel.learning.controller;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gabriel.learning.config.GeneralConfiguration;
 import com.gabriel.learning.model.Course;
+import com.gabriel.learning.service.CourseService;
 
 @RestController
 public class APIController {
@@ -26,6 +32,9 @@ public class APIController {
 	
 	@Autowired
 	private GeneralConfiguration generalConfig;
+	
+	@Autowired
+	private CourseService service;
 	
 	Logger logger = LoggerFactory.getLogger(APIController.class);
 	
@@ -46,10 +55,29 @@ public class APIController {
 		
     }
 	
+	@GetMapping("/courses")
+	public List<Course> getAllCourses() {
+		return service.findAllCourses();
+	}
+	
+	@GetMapping("/courses/{id}")
+	public Optional<Course> saveCourse(@PathVariable String id) {
+		return service.getCourse(id);
+	}
 	
 	@PostMapping("/courses")
-	public String saveCourse(@RequestBody Course course) {
-		return "Your course named " +course.getName() + " with "+ course.getChapterCount()+" chapters saved successfully! ";
+	public Course saveCourse(@RequestBody Course course) {
+		return service.saveCourse(course);
+	}
+	
+	@DeleteMapping("/courses/{id}")
+	public void deleteCourse(@PathVariable String id) {
+		service.deleteCourse(id);;
+	}
+	
+	@PutMapping("/courses")
+	public Course updateCourse(@RequestBody Course course) {
+		return service.saveCourse(course);
 	}
 
 }
