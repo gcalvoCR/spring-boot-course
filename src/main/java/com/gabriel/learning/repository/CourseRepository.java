@@ -8,6 +8,6 @@ import com.gabriel.learning.model.Course;
 
 @Repository
 @Qualifier(value= "courseRepository")
-public interface CourseRepository extends JpaRepository<Course, String>{
+public interface CourseRepository extends JpaRepository<Course, Long>{
 
 }

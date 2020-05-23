@@ -11,9 +11,9 @@ public interface CourseService {
 	
 	public Course saveCourse(Course course);
 	
-	void deleteCourse(String id);
+	void deleteCourse(Long id);
 
-	Optional<Course> getCourse(String id);
+	Optional<Course> getCourse(Long id);
 
 	Course updateCourse(Course course);
 

@@ -1,5 +1,6 @@
 package com.gabriel.learning.controller;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -61,7 +62,7 @@ public class APIController {
 	}
 	
 	@GetMapping("/courses/{id}")
-	public Optional<Course> saveCourse(@PathVariable String id) {
+	public Optional<Course> saveCourse(@PathVariable Long id) {
 		return service.getCourse(id);
 	}
 	
@@ -71,8 +72,8 @@ public class APIController {
 	}
 	
 	@DeleteMapping("/courses/{id}")
-	public void deleteCourse(@PathVariable String id) {
-		service.deleteCourse(id);;
+	public void deleteCourse(@PathVariable Long id) {
+		service.deleteCourse(id);
 	}
 	
 	@PutMapping("/courses")

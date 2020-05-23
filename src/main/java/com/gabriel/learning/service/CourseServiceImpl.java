@@ -22,7 +22,7 @@ public class CourseServiceImpl implements CourseService{
 	}
 	
 	@Override
-	public Optional<Course> getCourse(String id) {
+	public Optional<Course> getCourse(Long id) {
 		return repository.findById(id);
 	}
 	
@@ -32,7 +32,7 @@ public class CourseServiceImpl implements CourseService{
 	}
 	
 	@Override
-	public void deleteCourse(String id) {
+	public void deleteCourse(Long id) {
 		repository.deleteById(id);
 	}
 	
