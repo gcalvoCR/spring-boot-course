@@ -1,4 +1,4 @@
-spring:  profiles:    active: dev  datasource:    url: jdbc:mariadb://localhost:6666/course_schema    username: root    password: root    driverclassName: org.mariadb.jdbc.Driver  jpa:    hibernate:      ddl-auto: update
+spring:  profiles:    active: dev  datasource:    url: jdbc:mariadb://localhost:6666/course_schema    username: root    password: root    driverclassName: org.mariadb.jdbc.Driver  jpa:    hibernate:      ddl-auto: updatemanagement:  endpoints:    web:      exposure:        include: "*"
 ---spring:  profiles: dev  
 server:
   port: 9090

@@ -20,6 +20,9 @@ In this repo I put together some practice and information related to Spring Boot
 - Check the `application.yml`:
    - The app is running in `port: 9090` by default.
    - When you add  `spring.jpq.hibernate.dll-auto: update` it generates the tables for you!
+- There are 2 basic types of Security authentication:
+   - In memory authentication.
+   - data source authentication.
 
 
 ### Useful tips to remove listed .gitignore files
@@ -34,6 +37,8 @@ git commit -m "Removing all files in .gitignore"
 ### Useful links for examples
 
 - [Spring Boot MariaDB CRUD Example Tutorial](https://www.javaguides.net/2020/01/spring-boot-mariadb-crud-example-tutorial.html)
+- [Production features with actuator example](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)
+- [UDEMY COURSE](https://www.udemy.com/course/spring-boot-complete-guide-from-development-to-deployment/)
 
 ___
 
